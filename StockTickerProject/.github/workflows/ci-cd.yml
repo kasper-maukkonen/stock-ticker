@@ -26,4 +26,4 @@ jobs:
       run: docker build -t stock-ticker .
 
     - name: Push Docker Image to Registry
-      run: docker push your-docker-repo/stock-ticker:latest
+      run: docker push kaspermaukkonen/stock-ticker:latest

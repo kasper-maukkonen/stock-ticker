@@ -33,7 +33,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: jar-file
-          path: target/StockTickerProject-1.0-SNAPSHOT.jar
+          path: ./StockTickerProject-1.0-SNAPSHOT.jar
 
   dockerize:
     runs-on: ubuntu-latest

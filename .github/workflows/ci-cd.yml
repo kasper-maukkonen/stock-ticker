@@ -50,7 +50,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: StockTickerProject-1.0-SNAPSHOT.jar
-          path: ./StockTickerProject/target
+          path: .
 
       # Step 3: Log in to Docker Hub
       - name: Log in to Docker Hub

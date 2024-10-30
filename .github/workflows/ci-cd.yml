@@ -30,7 +30,7 @@ jobs:
       # Step 4: Archive the Build Artifacts
       # This ensures the JAR file is available for subsequent steps, including Docker
       - name: Upload JAR Artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: jar-file
           path: target/StockTickerProject-1.0-SNAPSHOT.jar

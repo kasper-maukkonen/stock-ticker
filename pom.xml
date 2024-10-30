@@ -63,6 +63,20 @@
                 </configuration>
             </plugin>
 
+            <!-- Maven JAR Plugin to specify main class in the manifest -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>com.stockticker.StockTickerGUI</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+
             <!-- Maven Surefire Plugin for Running JUnit Tests -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -76,7 +90,6 @@
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>1.2.2</version>
                 <configuration>
-                    <!--suppress UnresolvedMavenProperty -->
                     <imageName>${docker.image.prefix}/${project.artifactId}</imageName>
                     <dockerDirectory>src/main/docker</dockerDirectory>
                     <resources>
@@ -86,6 +99,16 @@
                             <include>${project.build.finalName}.jar</include>
                         </resource>
                     </resources>
+                </configuration>
+            </plugin>
+
+            <!-- Maven Exec Plugin to run the main class -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <mainClass>com.stockticker.StockTickerGUI</mainClass>
                 </configuration>
             </plugin>
         </plugins>
